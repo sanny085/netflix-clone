@@ -2,6 +2,8 @@ import React from 'react'
 import './HomeScreen.css'
 
 import Nav from './Nav';
+import Banner from './Banner';
+
 
 const HomeScreen = () => {
     return (
@@ -10,6 +12,7 @@ const HomeScreen = () => {
        
              <Nav/>
             {/*Banner*/}
+             <Banner/>
               
             {/*Row*/}
         </div>
