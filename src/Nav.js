@@ -1,11 +1,10 @@
 import React,{ useState, useEffect } from 'react'
 import './Nav.css'
 
-
 const Nav = () => {
    const [navAnima, setNavAnima] =useState(false);
 
-   const AnimationHandler = () =>{ 
+   const AnimationHandler = () => { 
       if(window.scrollY >100){
         setNavAnima(true);
       }
@@ -13,8 +12,8 @@ const Nav = () => {
         setNavAnima(false);
       }
     };
-
-   useEffect(()=>{
+    
+   useEffect( ()=> {
        window.addEventListener('scroll', AnimationHandler);
        return () => {
            window.removeEventListener('scroll', AnimationHandler);
