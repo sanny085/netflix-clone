@@ -13,6 +13,6 @@ const requests = {
 
 export default requests;
 
-//https://api.themoviedb.org/3/trending/all/week?api_key=7d161198e8f9b89da5beb6851bbeda63&language=en-US
+//https://api.themoviedb.org/3/discover/tv?api_key=7d161198e8f9b89da5beb6851bbeda63&with_networks=213
 
 

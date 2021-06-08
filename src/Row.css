@@ -1,0 +1,13 @@
+.row{
+    color:white;
+    margin-left:18px;
+
+}
+.row__postersMain{
+
+}
+.row__poster{
+    height:320px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
