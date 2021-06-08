@@ -10,7 +10,9 @@ const requests = {
    fetchScienceFrictionMovies : `/discover/movie?api_key=${API_KEY}&with_genres=878`,
    fetchDocumentaries: `/discover/movie?api_key=${API_KEY}&with_genres=99`
 };
- 
+
 export default requests;
 
 //https://api.themoviedb.org/3/trending/all/week?api_key=7d161198e8f9b89da5beb6851bbeda63&language=en-US
+
+

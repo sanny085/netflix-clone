@@ -7,7 +7,7 @@ const Row = ({title, fetchUrl}) => {
     useEffect( ()=>{
         const fetchMovie = async () => {
             const requestOrigi = await axios.get(fetchUrl);
-           // console.log("Banner",requestOrigi.data.results.length);
+             console.log("Row",requestOrigi.data.results);
 
             setMovie(requestOrigi.data.results[
                 Math.floor(Math.random() * requestOrigi.data.results.length-1)
@@ -18,15 +18,21 @@ const Row = ({title, fetchUrl}) => {
 
     },[]); 
 
-    console.log("Row Movie",movie?.backdrop_path);
-
+    console.log("Row Movie",movie);
 
     return (
-        <div> 
-         <h3 className="text-light">{title}</h3>
-            
+        <div className="row"> 
+         <h2 className="text-light">{title}</h2>
+            <div className="row__poster" style={{position:'relative'}} >
+               {
+                movie?.map((singleMovie)=>
+                <img src={singleMovie?.backdrop_path} alt=""/>
+                )
+               }
+            </div>
         </div>
     )
 }
 
 export default Row
+
