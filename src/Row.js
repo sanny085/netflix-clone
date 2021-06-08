@@ -22,16 +22,20 @@ const Row = ({title, fetchUrl, isLargeRow=false}) => {
     console.log("Row Movie",movie);
 
     return (
-        <div className="row"> 
+        <div className="row1"> 
          <h2 className="text-light">{title}</h2>
-            <div className="row__postersMain" style={{position:'relative'}} >
+            <div className="row__postersMain"  >
                {
-                movie?.map( singleData =>
-                    <img 
-                    key={singleData.id}
-                    className={`row__poster ${isLargeRow && "row__posterLarge" }`} 
-                    src={`${baseURL}${ isLargeRow ? singleData.poster_path : singleData.backdrop_path}`} 
-                    alt={singleData.title} style={{width:'245px',height:'300px'}}/>
+                movie.map( (singleData) => (
+                    (isLargeRow && singleData.poster_path) ||
+                    (!isLargeRow && singleData.backdrop_path)) && 
+                        (
+                        <img 
+                        key={singleData.id}
+                        className={`row__poster ${isLargeRow && "row__posterLarge" }`} 
+                        src={`${baseURL}${ isLargeRow ? singleData.poster_path : singleData.backdrop_path}`} 
+                        alt={singleData.title} />
+                        )   
                 )
                }
             </div>
