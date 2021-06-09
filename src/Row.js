@@ -2,11 +2,15 @@ import React,{ useState, useEffect } from 'react'
 import axios from './axios';
 import './Row.css';
 
+import YouTube from 'react-youtube';
+import movieTrailer from 'movie-trailer';
+
 const baseURL = "https://image.tmdb.org/t/p/original";
 
 const Row = ({title, fetchUrl, isLargeRow=false}) => {
     const[movie, setMovie] = useState([]);
-    
+    const[trailerUrl, setTrailerUrl] = useState("");
+
     useEffect( ()=>{
         const fetchMovie = async () => {
             const requestOrigi = await axios.get(fetchUrl);
@@ -19,6 +23,31 @@ const Row = ({title, fetchUrl, isLargeRow=false}) => {
 
     },[fetchUrl]); 
 
+    const opts = {
+        height: '390',
+        width: '640',
+        playerVars: {
+          // https://developers.google.com/youtube/player_parameters
+          autoplay: 1,
+        },
+      };
+
+    const handleSubmit = (singleData) => {
+        if(trailerUrl){
+            setTrailerUrl("");
+        }
+        else{
+            movieTrailer(singleData.name || singleData.original_name || "")
+            .then( url => {
+                console.log("Youtube URL"+url);
+                //https://www.youtube.com/watch?v=KnBwHYAnbEw
+                const urlParams =  new URLSearchParams(new URL(url).search);
+                setTrailerUrl(urlParams.get("v"));
+            })
+            .catch( error => console.log(error));
+        }
+    }
+
     console.log("Row Movie",movie);
 
     return (
@@ -29,16 +58,19 @@ const Row = ({title, fetchUrl, isLargeRow=false}) => {
                 movie.map( (singleData) => (
                     (isLargeRow && singleData.poster_path) ||
                     (!isLargeRow && singleData.backdrop_path)) && 
-                        (
+                      (
                         <img 
+                        onClick={()=>handleSubmit(singleData)}
                         key={singleData.id}
                         className={`row__poster ${isLargeRow && "row__posterLarge" }`} 
                         src={`${baseURL}${ isLargeRow ? singleData.poster_path : singleData.backdrop_path}`} 
                         alt={singleData.title} />
-                        )   
+                      )   
                 )
                }
             </div>
+            
+             {trailerUrl && <YouTube videoId={trailerUrl} opts={opts}/>}  
         </div>
     )
 }
