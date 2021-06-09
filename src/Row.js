@@ -26,6 +26,7 @@ const Row = ({title, fetchUrl, isLargeRow=false}) => {
     const opts = {
         height: '390',
         width: '640',
+        alignItems: 'center',
         playerVars: {
           // https://developers.google.com/youtube/player_parameters
           autoplay: 1,
@@ -37,12 +38,13 @@ const Row = ({title, fetchUrl, isLargeRow=false}) => {
             setTrailerUrl("");
         }
         else{
-            movieTrailer(singleData.name || singleData.original_name || "")
+            movieTrailer(singleData?.name || singleData?.title || singleData?.original_name || "")
             .then( url => {
-                console.log("Youtube URL"+url);
+                console.log("Youtube URL : "+url);
                 //https://www.youtube.com/watch?v=KnBwHYAnbEw
+               // https://www.youtube.com/results?search_query=sweet+tooth
                 const urlParams =  new URLSearchParams(new URL(url).search);
-                setTrailerUrl(urlParams.get("v"));
+                setTrailerUrl((urlParams.get("v") || urlParams.get("query")));
             })
             .catch( error => console.log(error));
         }
@@ -70,7 +72,7 @@ const Row = ({title, fetchUrl, isLargeRow=false}) => {
                }
             </div>
             
-             {trailerUrl && <YouTube videoId={trailerUrl} opts={opts}/>}  
+             {trailerUrl && <YouTube className="mx-auto d-block w-100" videoId={trailerUrl} opts={opts}/>}  
         </div>
     )
 }
