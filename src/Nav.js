@@ -25,7 +25,7 @@ const Nav = () => {
       <div className={`nav ${ navAnima && 'nav__black'}`}>
          <div className="nav__contents">
             <img className="float-start  nav__logo" src="http://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png" alt="netflix brand logo"/>
-           <FaUserCircle className="text-light float-end rounded nav__avatar" />
+           <FaUserCircle className="text-light float-end rounded nav__avatar"/>
          </div>
       </div>
     )
