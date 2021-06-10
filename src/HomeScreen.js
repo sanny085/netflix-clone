@@ -25,11 +25,10 @@ const HomeScreen = () => {
              <Row title="Comedy Movies" fetchUrl={requests.fetchComedyMovies}/> 
              <Row title="Horror Movies" fetchUrl={requests.fetchHorrorMovies}/> 
              <Row title="Science & Frictions Movies" fetchUrl={requests.fetchScienceFrictionMovies}/> 
-             <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries}/> 
-            
-
+             <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries}/>    
         </div>
     )
 }
 
 export default HomeScreen;
+
