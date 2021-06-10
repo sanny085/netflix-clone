@@ -11,7 +11,7 @@ const Row = ({title, fetchUrl, isLargeRow=false}) => {
     const[movie, setMovie] = useState([]);
     const[trailerUrl, setTrailerUrl] = useState("");
 
-    useEffect( ()=>{
+    useEffect( () => {
         const fetchMovie = async () => {
             const requestOrigi = await axios.get(fetchUrl);
              console.log("Row",requestOrigi.data.results);
@@ -34,10 +34,10 @@ const Row = ({title, fetchUrl, isLargeRow=false}) => {
       };
 
     const handleSubmit = (singleData) => {
-        if(trailerUrl){
+        if(trailerUrl) {
             setTrailerUrl("");
         }
-        else{
+        else {
             movieTrailer(singleData?.name || singleData?.title || singleData?.original_name || "")
             .then( url => {
                 console.log("Youtube URL : "+url);
