@@ -1,7 +1,7 @@
 import React from 'react';
 
 import HomeScreen from './screens/HomeScreen';
-import ProfileScreen from './screens/ProfileScreen';
+import LoginScreen from './screens/LoginScreen';
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import {
@@ -14,9 +14,7 @@ import {
 import './App.css';
 
 function App() {
-  const user = {
-    name : 'Sanny'
-  };
+  const user = null;
   return (
     <div className="app">
       {
