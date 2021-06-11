@@ -7,8 +7,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 
 import './App.css';
@@ -19,7 +18,7 @@ function App() {
     <div className="app">
       {
        !user ? (
-        <ProfileScreen />
+        <LoginScreen />
        ) : (
        <Router>
          <Switch> 
