@@ -49,17 +49,17 @@ button.loginScreen__button{
 }
 .loginScreen__gradient{
     width:100%;
-    height:100vh;
+    height: 110vh;
     z-index:1;
     background:rgba(0,0,0,0.4);
-    background-image: linear-gradient(to top,rgba(0,0,0,.8) 0,rgba(0,0,0,0) 60%,rgba(0,0,0,0.8) 100%);
+    background-image: linear-gradient(to top,rgba(0,0,0,.8) 0,rgba(0,0,0,0) 50%,rgba(0,0,0,0) 75%,rgba(0,0,0,0.8) 100%);
 }
 .loginScreen__body{
     position:absolute;
-    top:30%;
+    top:20%; 
     z-index:1;
     color:#fff;
-    padding:20px;
+    padding:8px;
     text-align:center;
     margin-left:auto;
     margin-right:auto;
@@ -67,14 +67,12 @@ button.loginScreen__button{
     right:0;
 }
 .loginScreen__input > form > input{
-
     padding:10px;
     outline-width: 0;
     border:none;
     height: 55px;
     width: 30%;
     max-width:600px;
-
 }
 .loginScreen__input .get__started{
     padding:16px 20px;

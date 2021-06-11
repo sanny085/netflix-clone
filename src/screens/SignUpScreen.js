@@ -16,7 +16,7 @@ const SignUpScreen = () => {
   }, [email]);
 
   return (
-    <div className="SignUpScreen mt-0">
+    <div className="SignUpScreen mt-0 mb-3">
      <form>
        <h1 className="mb-3 float-start">Sign In</h1>
          <input type="email" value={email} onChange={(e)=> setEmail(e.target.value)} placeholder="Email" />
