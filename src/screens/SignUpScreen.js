@@ -1,22 +1,26 @@
-import React from 'react';
+import React, { useState, useEffect} from 'react';
 import './SignUpScreen.css';
 
 const SignUpScreen = () => {
-    
-    const register = (e) =>{
-       e.preventDefault();
-    }
-    
-    const signIn = (e) => {
-        e.preventDefault();
-    }
+    const[email, setEmail] = useState('');
+    const[password, setPassword] = useState('');
 
-    return (
+  const register = (e) =>{
+     e.preventDefault();
+  }
+  const signIn = (e) => {
+     e.preventDefault();
+  }
+  useEffect(() => {
+   console.log(email,password);
+  }, [email]);
+
+  return (
     <div className="SignUpScreen mt-0">
      <form>
        <h1 className="mb-3 float-start">Sign In</h1>
-         <input type="email" placeholder="Email" />
-         <input type="password" placeholder="password" />
+         <input type="email" value={email} onChange={(e)=> setEmail(e.target.value)} placeholder="Email" />
+         <input type="password" value={password} onChange={(e)=> setPassword(e.target.value)} placeholder="password" />
          <button className="mt-4" onClick={signIn}>Sign In</button>
          <h5 className="mt-2">
             <span className="text-muted ">New to Netflix? </span>
