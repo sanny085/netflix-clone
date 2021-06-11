@@ -21,7 +21,7 @@ function App() {
      <Router>
        <Switch>
           <Route path="/profile">
-            <ProfileScreen />
+             <ProfileScreen />
           </Route>
           <Route path="/">
               <HomeScreen/>
