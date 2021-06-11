@@ -1,7 +1,7 @@
 import React from 'react';
 
-import HomeScreen from './HomeScreen';
-import ProfileScreen from './ProfileScreen';
+import HomeScreen from './screens/HomeScreen';
+import ProfileScreen from './screens/ProfileScreen';
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import {
@@ -11,24 +11,27 @@ import {
   Link
 } from "react-router-dom";
 
-
 import './App.css';
 
 function App() {
+  const user = {
+    name : 'Sanny'
+  };
   return (
     <div className="app">
-     
-     <Router>
-       <Switch>
-          <Route path="/profile">
-             <ProfileScreen />
-          </Route>
-          <Route path="/">
+      {
+       !user ? (
+        <ProfileScreen />
+       ) : (
+       <Router>
+         <Switch> 
+           <Route path="/">
               <HomeScreen/>
-          </Route>
-        </Switch>
-      </Router>  
-
+           </Route>
+         </Switch>
+       </Router> 
+       )
+      }
     </div>
   );
 }

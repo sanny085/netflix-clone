@@ -1,6 +1,6 @@
 import React from 'react'
 import './ProfileScreen.css'
-import Nav from './Nav';
+import Nav from '../Nav';
 
 
 const ProfileScreen = () => {
