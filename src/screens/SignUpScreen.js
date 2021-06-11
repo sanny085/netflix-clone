@@ -26,5 +26,6 @@ const SignUpScreen = () => {
     </div>
     )
 }
+
 export default SignUpScreen
 
