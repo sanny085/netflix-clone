@@ -6,6 +6,7 @@ const SignUpScreen = () => {
     const register = (e) =>{
        e.preventDefault();
     }
+    
     const signIn = (e) => {
         e.preventDefault();
     }
