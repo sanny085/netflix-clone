@@ -8,6 +8,7 @@ import { MdKeyboardArrowRight } from 'react-icons/md';
 
 const LoginScreen = () => {
     const [signIn, setSignIn] = useState(false);
+    
     return (
     <div className="loginScreen  ">
      <div className="loginScreen__background">
@@ -20,6 +21,7 @@ const LoginScreen = () => {
      <div className="loginScreen__body container-fluid">
         { 
          signIn ? (<SignUpScreen/>) : (<>
+         <br/><br/>
           <h1>Unlimited movies, TV shows and more.</h1>
           <h2>Watch anywhere. Cancel anytime.</h2>
           <h3>Ready to watch? Enter your email to create or restart your membership.</h3>

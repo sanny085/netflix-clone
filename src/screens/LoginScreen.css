@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Mate+SC&display=swap');
+
 .loginScreen{
     position: relative;
     height:100%;
@@ -37,7 +39,7 @@ button.loginScreen__button{
     margin-bottom:30px;
     font-size:2rem;
     font-weight:400;
-    font-family:"Netflix Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Mate SC', serif;
     line-height: 1.1;
     word-spacing:-1.93px;
 }
