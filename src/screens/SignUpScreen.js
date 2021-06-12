@@ -21,7 +21,7 @@ const SignUpScreen = () => {
       auth.createUserWithEmailAndPassword(emailRef, passRef)
       .then( (userAuth) => {
           toast("success !",{type:'success'},userAuth);         
-          console.log(userAuth); 
+          console.log("Register User: ",userAuth); 
       }) 
       .catch((error) => {
           var errorCode = error.code;
@@ -32,7 +32,6 @@ const SignUpScreen = () => {
       });
   }
 
-  
  const signIn = (e) => {
      e.preventDefault();
   }
