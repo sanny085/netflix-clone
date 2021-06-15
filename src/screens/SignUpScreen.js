@@ -7,14 +7,12 @@ import {auth} from '../firebase';
 import db from '../firebase';
 
 const SignUpScreen = () => {
-
- const[name, setName] = useState('');
  const[email, setEmail] = useState('');
  const[password, setPassword] = useState('');
   
  const register = (e) => {
       e.preventDefault();
-      auth.createUserWithEmailAndPassword(name,email, password)
+      auth.createUserWithEmailAndPassword(email, password)
       .then( (userAuth) => {
           toast("Register Successfully!",{type:'success'},userAuth);         
           console.log("Register User: ",window.screen.height,userAuth); 
@@ -48,10 +46,8 @@ const SignUpScreen = () => {
      <form>
      <ToastContainer />
        <h1 className="mb-3 pt-1  pb-2 float-start">Sign In</h1>
-         <input type="email" value={name} onChange={(e)=> setName(e.target.value)} placeholder="Enter Your Name" />
          <input type="email" value={email} onChange={(e)=> setEmail(e.target.value)} placeholder="Email" />
          <input type="password" value={password} onChange={(e)=> setPassword(e.target.value)} placeholder="password" />
-        
          <button className="mt-4" onClick={signIn}>Sign In</button>
          <h5 className="mt-2">
             <span className="text-muted ">New to Netflix? </span>
