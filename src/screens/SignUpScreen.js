@@ -15,7 +15,7 @@ const SignUpScreen = () => {
       auth.createUserWithEmailAndPassword(email, password)
       .then( (userAuth) => {
           toast("Register Successfully!",{type:'success'},userAuth);         
-          console.log("Register User: ",window.screen.height,userAuth); 
+          console.log("Register User: ",window.screen.width,userAuth); 
       }) 
       .catch((error) => {
           var errorCode = error.code;
@@ -28,7 +28,6 @@ const SignUpScreen = () => {
 
  const signIn = (e) => {
      e.preventDefault();
-
      auth.signInWithEmailAndPassword(email, password)
      .then( (loginUser) =>{
          console.log("Login User Data",loginUser);
@@ -38,7 +37,6 @@ const SignUpScreen = () => {
          toast(error.message,{type:'warning'});
          console.log("Login Error",error);
      });
-
 }
  
  return(

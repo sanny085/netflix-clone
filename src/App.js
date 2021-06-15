@@ -1,4 +1,4 @@
-import React,{ useEffect } from 'react';
+import React,{ useState, useEffect } from 'react';
 
 import HomeScreen from './screens/HomeScreen';
 import LoginScreen from './screens/LoginScreen';
@@ -15,21 +15,26 @@ import {auth} from './firebase';
 import './App.css';
 
 function App() {
-  const user = null;
+  const [user, setUser] = useState(null);
   
   useEffect( ()=> {
-    auth.onAuthStateChanged((user) => {
+    const unSubscribe =  auth.onAuthStateChanged((user) => {
       if (user) {
-        // User is signed in, see docs for a list of available properties
-        // https://firebase.google.com/docs/reference/js/firebase.User
-        var uid = user.user.email;
-        console.log("User Login",uid);
-        // ...
+        // User is signed in 
+        console.log("App login",user);
+        var loginUser = user.email;
+        console.log("App User Login",loginUser);
+        setUser(user.email); 
       } else {
         // User is signed out
-        // ...
       }
     });
+    
+    // cleanup funtion(when component will unmount we don't need to duplicate value)
+   return () => {
+    unSubscribe();
+   }
+
   },[]);
 
 

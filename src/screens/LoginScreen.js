@@ -5,7 +5,6 @@ import SignUpScreen from './SignUpScreen';
 
 import { MdKeyboardArrowRight } from 'react-icons/md';
 
-
 const LoginScreen = () => {
     const [signIn, setSignIn] = useState(false);
     
