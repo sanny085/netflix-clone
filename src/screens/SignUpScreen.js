@@ -7,15 +7,17 @@ import {auth} from '../firebase';
 import db from '../firebase';
 
 const SignUpScreen = () => {
-   const[email, setEmail] = useState('');
-   const[password, setPassword] = useState('');
+
+ const[name, setName] = useState('');
+ const[email, setEmail] = useState('');
+ const[password, setPassword] = useState('');
   
-    const register = (e) => {
+ const register = (e) => {
       e.preventDefault();
-      auth.createUserWithEmailAndPassword(email, password)
+      auth.createUserWithEmailAndPassword(name,email, password)
       .then( (userAuth) => {
           toast("Register Successfully!",{type:'success'},userAuth);         
-          console.log("Register User: ",userAuth); 
+          console.log("Register User: ",window.screen.height,userAuth); 
       }) 
       .catch((error) => {
           var errorCode = error.code;
@@ -24,7 +26,7 @@ const SignUpScreen = () => {
           toast(errorMessage,{type:'error'});
           // ..
       });
-  }
+}
 
  const signIn = (e) => {
      e.preventDefault();
@@ -41,14 +43,15 @@ const SignUpScreen = () => {
 
 }
  
-
  return(
   <div className="SignUpScreen mt-0 mb-3 ">
      <form>
      <ToastContainer />
        <h1 className="mb-3 pt-1  pb-2 float-start">Sign In</h1>
+         <input type="email" value={name} onChange={(e)=> setName(e.target.value)} placeholder="Enter Your Name" />
          <input type="email" value={email} onChange={(e)=> setEmail(e.target.value)} placeholder="Email" />
          <input type="password" value={password} onChange={(e)=> setPassword(e.target.value)} placeholder="password" />
+        
          <button className="mt-4" onClick={signIn}>Sign In</button>
          <h5 className="mt-2">
             <span className="text-muted ">New to Netflix? </span>
@@ -59,5 +62,5 @@ const SignUpScreen = () => {
     )
 }
 
-export default SignUpScreen
+export default SignUpScreen;
 

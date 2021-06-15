@@ -1,6 +1,7 @@
 {
   "projects": {
     "default": "netflix-clone-dca4d",
-    "popup": "netflix-clone-dca4d"
+    "popup": "netflix-clone-dca4d",
+    "staging": "netflix-clone-dca4d"
   }
 }
