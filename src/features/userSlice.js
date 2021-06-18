@@ -3,18 +3,19 @@ import { fetchCount } from './counter/counterAPI';
 
 const initialState = {
   user: null,
-  status: 'another initial state',
+  status: 'another state value',
 };
  
 export const userSlice = createSlice({
   name: 'user',
   initialState,
   // The `reducers` field lets us define reducers and generate associated actions
+  // these are called actions
   reducers: {
      login : (state, action) =>  {
         state.user = action.payload;
       },
-     logout:(state, action) => {
+     logout:(state) => {
         state.user = null;
       }
    }, 
@@ -25,8 +26,7 @@ export const userSlice = createSlice({
 
 export const { login, logout } = userSlice.actions;
 
-export const selectCount = (state) => state.counter.value;
+export const selectUser = (state) => state.user.user;
 
 export default userSlice.reducer;
-
 
