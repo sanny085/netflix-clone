@@ -23,7 +23,7 @@ const Banner = () => {
 
     console.log("Banner Movie",movie?.backdrop_path);
 
-    function truncate(string, n){
+    function truncate(string, n) {
         return string?.length > n ? string.substr(0, n-1) + "...." : string;
     }
     return (
