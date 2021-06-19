@@ -14,7 +14,7 @@ import {auth} from './firebase';
 import { useDispatch } from 'react-redux';
 
 import './App.css';
-import { logout } from './features/userSlice';
+import { login, logout } from './features/userSlice';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -28,9 +28,7 @@ function App() {
         console.log("App login",userAuth);
         var loginUser = userAuth.email;
         console.log("App User Login",loginUser);
-        dispatch({
-          user:user.id,
-        })
+        dispatch(login(loginUser))
         setUser(userAuth.email); 
       } else {
         // User is signed out

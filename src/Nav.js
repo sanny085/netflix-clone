@@ -3,7 +3,6 @@ import './Nav.css'
 import { FaUserCircle } from 'react-icons/fa';
 import {auth} from './firebase';
 
-
 const Nav = () => {
    const [navAnima, setNavAnima] = useState(false); 
     
