@@ -13,7 +13,8 @@ export const userSlice = createSlice({
   // these are called actions
   reducers: {
      login : (state, action) =>  {
-        state.nik = action.payload;
+        state.user = action.payload;
+        console.log("userSlice",state.user);
       },
      logout:(state) => {
         state.user = null;
@@ -27,9 +28,8 @@ export const userSlice = createSlice({
 
 export const { login, logout } = userSlice.actions;
 
-export const selectUser = (state) => {
-                                    state.user.user
-                                    console.log("This is userSlice",state);
-                                   };
+export const selectUser = (state) => state.user.user; 
+                                   
+
 export default userSlice.reducer;
 
