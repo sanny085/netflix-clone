@@ -11,25 +11,30 @@ import {
 } from "react-router-dom";
 
 import {auth} from './firebase';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector  } from 'react-redux';
 
 import './App.css';
-import { login, logout } from './features/userSlice';
+import { login, logout, selectUser } from './features/userSlice';
+ 
+
 
 function App() {
-  const [user, setUser] = useState(null);
+  const user = useSelector(selectUser);
   
   const dispatch = useDispatch();
 
   useEffect( ()=> {
     const unSubscribe =  auth.onAuthStateChanged((userAuth) => {
       if (userAuth) {
-        // User is signed in 
-        console.log("App login",userAuth);
+        // User is signed in  
         var loginUser = userAuth.email;
         console.log("App User Login",loginUser);
-        dispatch(login(loginUser))
-        setUser(userAuth.email); 
+
+        dispatch(login({
+          uid : userAuth.uid,
+          email : userAuth.email
+        }));
+         
       } else {
         // User is signed out
         dispatch(logout)
