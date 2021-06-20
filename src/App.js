@@ -37,7 +37,7 @@ function App() {
          
       } else {
         // User is signed out
-        dispatch(logout)
+        dispatch(logout())
       }
     });
     
@@ -57,6 +57,9 @@ function App() {
        ) : (
        <Router>
          <Switch> 
+          <Route path="/login">
+               <LoginScreen/>
+           </Route>
            <Route path="/profile">
                <ProfileScreen/>
            </Route>
