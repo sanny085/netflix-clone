@@ -3,8 +3,8 @@ import './ProfileScreen.css'
 
 const ProfileScreen = () => {
     return (
-        <div>
-            This is profile
+        <div className="ProfileScreen bg-success p-5">
+            This is profile screen
         </div>
     )
 }
