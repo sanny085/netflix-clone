@@ -2,7 +2,8 @@ import React,{ useState, useEffect } from 'react';
 
 import HomeScreen from './screens/HomeScreen';
 import LoginScreen from './screens/LoginScreen';
- 
+import ProfileScreen from './screens/ProfileScreen';
+
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import {
   BrowserRouter as Router,
@@ -15,7 +16,6 @@ import { useDispatch, useSelector  } from 'react-redux';
 
 import './App.css';
 import { login, logout, selectUser } from './features/userSlice';
- 
 
 
 function App() {
@@ -57,6 +57,9 @@ function App() {
        ) : (
        <Router>
          <Switch> 
+           <Route path="/profile">
+               <ProfileScreen/>
+           </Route>
            <Route path="/">
               <HomeScreen/>
            </Route>
