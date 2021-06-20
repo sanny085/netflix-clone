@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 .profileScreen{
     height:100vh;
     color:#fff;
@@ -14,8 +16,9 @@
 .profileScreen__info{
     display:flex;
 }
-.profileScreen__body > h1{
-    font-size:60px;
+.profileScreen__body > h2{
+    font-size:40px;
+    font-family: 'Roboto', sans-serif;
     font-weight:400;
     border-bottom:1px solid #9a0b12;
     margin-top:30px

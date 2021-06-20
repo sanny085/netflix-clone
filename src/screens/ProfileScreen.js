@@ -5,9 +5,9 @@ import { ImUser } from 'react-icons/im';
 import {useSelector} from "react-redux";
 import { auth } from '../firebase';
 
-import { useHistory  } from "react-router-dom";
-import {selectUser} from '../features/userSlice';
+import {useHistory} from 'react-router-dom';
 
+import {selectUser} from '../features/userSlice';
 
 const ProfileScreen = () => {
     const user = useSelector(selectUser);
@@ -16,7 +16,7 @@ const ProfileScreen = () => {
         <div className="profileScreen">
             <Nav/>
             <div className="profileScreen__body">
-                <h1>User Profile</h1>
+                <h2>User Profile</h2>
                 <div className="profileScreen__info">
                     <ImUser className="userLogo"/>
                     <div className="profileScreen__detail">
@@ -26,7 +26,7 @@ const ProfileScreen = () => {
                            <h3>Plans</h3>
                            
                           {/*End Our All plans*/}
-                          <button onClick={()=>(auth.signOut(),history.push("/login"))} className="profileScreen__signout">Sign Out</button>
+                          <button onClick={()=>(auth.signOut(),history.push("/"))} className="profileScreen__signout">Sign Out</button>
                         </div>
                     </div>
 

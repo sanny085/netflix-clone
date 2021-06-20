@@ -57,9 +57,7 @@ function App() {
        ) : (
        <Router>
          <Switch> 
-          <Route path="/login">
-               <LoginScreen/>
-           </Route>
+          
            <Route path="/profile">
                <ProfileScreen/>
            </Route>

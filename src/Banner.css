@@ -9,10 +9,15 @@
     padding-top:165px;
     height:190px;
 }
+.fade__background{
+    opacity: 0.1;
+    background: linear-gradient(360deg, transparent,#606A7A, #111);
+}
 .banner__title{
     font-size: 3rem;
-    font-weight: 600;
+    font-weight: 500;
     padding-bottom:0.3rem;
+    font-family: 'Roboto', sans-serif;
 }
 .banner__description{
     width:45rem;
