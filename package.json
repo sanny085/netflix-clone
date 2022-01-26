@@ -1,6 +1,7 @@
 {
   "name": "netflix-clone",
   "version": "0.1.0",
+  "homepage": "https://sanny085.github.io/netflix-clone",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.5.1",
@@ -11,6 +12,7 @@
     "bootstrap": "^5.0.1",
     "firebase": "^8.6.5",
     "firebase-tools": "^9.12.1",
+    "gh-pages": "^3.2.3",
     "movie-trailer": "^2.1.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -23,6 +25,8 @@
     "reactstrap": "^8.9.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
